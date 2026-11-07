@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AI job matching for the talent pool · Mallikarjuna MS</title>
-<meta name="description" content="AI reviews every talent pool candidate against every open job and recommends the best fit.">
+<title>Making the talent pool a place to hire from · Mallikarjuna MS</title>
+<meta name="description" content="Recruiters find the best open job for any talent pool candidate in one click, and the pool now fills itself from the careers page and email.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap"><link rel="stylesheet" href="style.css"></head>
 <body>
 <header class="top"><div class="wrap"><nav>
@@ -16,24 +16,35 @@
 <main class="wrap">
   <p class="crumb"><a href="index.html#work">← All work</a></p>
   <div class="case-hero">
-    <div class="tags"><span class="tag">AI</span><span class="tag">Sourcing</span></div>
-    <h1>AI job matching for the talent pool</h1>
-    <p class="sum">Customers had thousands of candidates in their talent pool and no practical way to match them to open jobs. I scoped an AI matching layer that reviews each candidate against every open job and recommends the best fit, so the pool becomes the first place recruiters hire from.</p>
+    <div class="tags"><span class="tag">AI</span><span class="tag">Talent pool</span></div>
+    <h1>Making the talent pool a place to hire from</h1>
+    <p class="sum">Customers collected thousands of candidates in their talent pool but rarely hired from it. I made it easier to fill the pool and scoped an AI recommendation that shows recruiters the best open job for each candidate.</p>
   </div>
   <div class="facts"><div><dl><dt>Role</dt><dd>Product manager</dd></dl></div><div><dl><dt>Team</dt><dd>Founder, engineering</dd></dl></div><div><dl><dt>Timeline</dt><dd>2026</dd></dl></div><div><dl><dt>Status</dt><dd>Live</dd></dl></div></div>
   <div class="glance" aria-label="At a glance">
-  <div><span class="label">Problem</span><p>Thousands of talent pool candidates and no practical way to match them to open jobs.</p></div>
-  <div><span class="label">What we shipped</span><p>AI reviews every candidate against every open job and recommends the best fit, with reasons.</p></div>
-  <div><span class="label">Result</span><p>Matching runs at scale in the background, so recruiters hire from candidates they already have.</p></div>
+  <div><span class="label">Problem</span><p>Thousands of talent pool candidates, few ways in, and no practical way to match them to open jobs.</p></div>
+  <div><span class="label">What we shipped</span><p>Three new ways into the pool, and an AI recommendation of the best open job for each candidate.</p></div>
+  <div><span class="label">Result</span><p>Recruiters can match any pool candidate to the right open job in one click.</p></div>
 </div>
   <figure class="shot" style="margin-top:28px"><img class="shot-img" src="match-2.png" alt="The recommendation: the best-fit open job, the criteria met, and a one-click move." loading="lazy"><figcaption>The recommendation: the best-fit open job, the criteria met, and a one-click move.</figcaption></figure>
   <div class="layout">
-    <aside class="toc" aria-label="On this page"><span class="label">On this page</span><ol><li><a href="#context">Context</a></li><li><a href="#problem">Problem</a></li><li><a href="#use-cases">Use cases</a></li><li><a href="#why-ai">Why AI</a></li><li><a href="#how-it-works">How it works</a></li><li><a href="#decisions-and-trade-offs">Decisions and trade-offs</a></li><li><a href="#filling-the-pool">Filling the pool</a></li><li><a href="#impact">Impact</a></li><li><a href="#learnings">Learnings</a></li></ol></aside>
+    <aside class="toc" aria-label="On this page"><span class="label">On this page</span><ol><li><a href="#context">Context</a></li><li><a href="#problem">Problem</a></li><li><a href="#filling-the-pool">Filling the pool</a></li><li><a href="#use-cases">Use cases</a></li><li><a href="#why-ai">Why AI</a></li><li><a href="#how-it-works">How it works</a></li><li><a href="#decisions-and-trade-offs">Decisions and trade-offs</a></li><li><a href="#impact">Impact</a></li><li><a href="#learnings">Learnings</a></li></ol></aside>
     <div class="content"><section id="context"><h2>Context</h2><p>The talent pool holds candidates who aren't attached to a job: past applicants, CVs sent to the company's careers inbox, referrals for later. For an active hiring team it grows into thousands of profiles, and it should be the cheapest place to hire from.</p></section><section id="problem"><h2>Problem</h2><p>There was no practical way to use it. Keyword search existed, but it finds words, not fit. A search for "sales" could return designers whose CVs happen to mention sales, and miss strong candidates who describe the same experience differently.</p>
 <p>So recruiters fell back to manual work: opening CVs one at a time and comparing each one against their open roles. With thousands of candidates and 10 to 20 open jobs, that doesn't scale. In practice the pool was ignored, and every new job was sourced from scratch.</p>
-<p class="quote">"If someone is in the talent pool, show me which job they fit the most."<small>A request from several customers</small></p></section><section id="use-cases"><h2>Use cases</h2><ul>
+<p class="quote">"If someone is in the talent pool, show me which job they fit the most."<small>A request from several customers</small></p></section><section id="filling-the-pool"><h2>Filling the pool</h2><p>Before matching could help, the pool had to fill up. Two gaps meant customers were losing candidates:</p>
+<ul>
+<li><b>No open job, no application.</b> A good candidate visiting the careers page with nothing suitable open simply left.</li>
+<li><b>CVs stuck in email.</b> CVs sent to a careers inbox had to be downloaded and added to the ATS by hand, so most never made it in.</li>
+</ul>
+<p>So we added three ways in:</p>
+<ol class="rulelist">
+<li><span><b>Apply to the talent pool from the careers page.</b> If no open job fits, the candidate can apply to the talent pool directly. Customers keep in touch with people they can reach out to when the right role opens.</span></li>
+<li><span><b>Forward an email, add a candidate.</b> Forwarding a CV email to Whitecarrot reads the email, parses the CV and adds the candidate to the talent pool automatically, with no manual entry.</span></li>
+<li><span><b>Fully automatic with email rules.</b> I wrote a help article showing customers how to set up a rule in their mailbox, so every email with a CV that reaches their careers address is forwarded on its own. The sender gets a confirmation email that the candidate was added to the talent pool.</span></li>
+</ol>
+<p>During testing I found the candidate's source showed our internal inbox address. We changed it to show the customer's own address the CV was sent to, so recruiters can see where each candidate came from.</p></section><section id="use-cases"><h2>Use cases</h2><ul>
 <li><b>A new CV lands in the pool:</b> which of my open jobs is this person right for?</li>
-<li><b>A new job opens:</b> who already in my pool fits it?</li>
+<li><b>I'm going through my pool:</b> which job does each person fit?</li>
 <li><b>I'm looking at a candidate:</b> why are they a fit, and can I move them in one step?</li>
 </ul></section><section id="why-ai"><h2>Why AI</h2><p>Matching a candidate to a job is a judgement, not a search. A recruiter reads the whole CV and weighs it against what the role needs. AI can do that same reading consistently, across every candidate and every open job, which no recruiter has time to do by hand.</p>
 <p>We already had an AI CV review that scores applicants against a job's must-have and nice-to-have criteria, and recruiters trusted it. Matching could build on the same foundation instead of starting a new model.</p></section><section id="how-it-works"><h2>How it works</h2><ol class="rulelist">
@@ -49,28 +60,16 @@
 <li><b>No automatic moves.</b> A wrong move damages trust far more than a missed one, so a person always makes the call.</li>
 <li><b>No new emails.</b> Once a candidate moves into a job, that job's existing stage emails apply.</li>
 <li><b>In the list, not a new screen.</b> The recommendation opens next to the candidate's stage, with the full job title and a "Move to" button, so recruiters can work through the pool without leaving it.</li>
-</ul></section><section id="filling-the-pool"><h2>Filling the pool</h2><p>Matching is only as useful as the pool behind it. Two gaps meant customers were losing candidates before matching could help:</p>
-<ul>
-<li><b>No open job, no application.</b> A good candidate visiting the careers page with nothing suitable open simply left.</li>
-<li><b>CVs stuck in email.</b> CVs sent to a careers inbox had to be downloaded and added to the ATS by hand, so most never made it in.</li>
-</ul>
-<p>So we added three ways in:</p>
-<ol class="rulelist">
-<li><span><b>Apply to the talent pool from the careers page.</b> If no open job fits, the candidate can apply to the talent pool directly. Customers keep in touch with people they can reach out to when the right role opens.</span></li>
-<li><span><b>Forward an email, add a candidate.</b> Forwarding a CV email to Whitecarrot reads the email, parses the CV and adds the candidate to the talent pool automatically, with no manual entry.</span></li>
-<li><span><b>Fully automatic with email rules.</b> I wrote a help article showing customers how to set up a rule in their mailbox, so every email with a CV that reaches their careers address is forwarded on its own. The sender gets a confirmation email that the candidate was added to the talent pool.</span></li>
-</ol>
-<p>During testing I found the candidate's source showed our internal inbox address. We changed it to show the customer's own address the CV was sent to, so recruiters can see where each candidate came from.</p></section><section id="impact"><h2>Impact</h2><div class="impact">
+</ul></section><section id="impact"><h2>Impact</h2><div class="impact">
 <div><b>Matching at the scale customers actually have</b><span>Any pool candidate can be checked against every open job in one click. Recruiters no longer read CVs one by one to find a fit.</span></div>
 <div><b>Hire from candidates already collected</b><span>Every candidate placed from the pool is one the team didn't have to source or pay a job board for again.</span></div>
 <div><b>No candidate lost</b><span>Careers page visitors with no matching job, and CVs sent by email, now land in the pool instead of being lost.</span></div>
-</div>
-<p><b>Success metrics:</b> adoption (share of pool candidates moved into a job) and outcome (how many of those are hired).</p></section><section id="learnings"><h2>Learnings</h2><div class="lesson"><ul>
+</div></section><section id="learnings"><h2>Learnings</h2><div class="lesson"><ul>
 <li>With AI, a wrong recommendation costs more trust than a missing one. Show the reason, and keep a person in the loop.</li>
 <li>Test with weak and borderline CVs, not just strong ones. That's where poor matches surface.</li>
 </ul></div></section></div>
   </div>
-  <div class="next"><a href="panel-scheduling.html"><small>← Previous</small><b>Panel interview scheduling</b></a><a class="r" href="help-centre.html"><small>Next project →</small><b>The help centre our AI assistant learns from</b></a></div>
+  <div class="next"><a href="panel-scheduling.html"><small>← Previous</small><b>Panel interview scheduling</b></a><a class="r" href="help-centre.html"><small>Next project →</small><b>The help centre behind our AI assistant</b></a></div>
 </main>
 <footer id="contact"><div class="wrap end">
   <span class="label">Contact</span>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ATS to HRMS integration · Mallikarjuna MS</title>
-<meta name="description" content="Hired candidates become employees in Bayzat HRMS, with their details and documents, in one flow.">
+<title>From hired candidate to employee in one step · Mallikarjuna MS</title>
+<meta name="description" content="Hired candidates become employees in Bayzat HRMS, with their details and documents, in two steps.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap"><link rel="stylesheet" href="style.css"></head>
 <body>
 <header class="top"><div class="wrap"><nav>
@@ -16,14 +16,14 @@
 <main class="wrap">
   <p class="crumb"><a href="index.html#work">← All work</a></p>
   <div class="case-hero">
-    <div class="tags"><span class="tag">Integration</span><span class="tag">Partner</span><span class="tag">Launch</span></div>
-    <h1>ATS to HRMS integration</h1>
-    <p class="sum">The handoff from hired candidate to employee was fully manual. I scoped a two-step flow that creates the employee in Bayzat HRMS with the right details and documents, and ran the rollout across about 60 accounts.</p>
+    <div class="tags"><span class="tag">Integration</span></div>
+    <h1>From hired candidate to employee in one step</h1>
+    <p class="sum">Moving a hired candidate into Bayzat HRMS was fully manual. I scoped a two-step flow that creates the employee with the right details and documents, and ran the rollout across about 60 accounts.</p>
   </div>
   <div class="facts"><div><dl><dt>Role</dt><dd>Product manager</dd></dl></div><div><dl><dt>Team</dt><dd>Founder, engineering, Bayzat HRMS</dd></dl></div><div><dl><dt>Timeline</dt><dd>Feb to Oct 2026</dd></dl></div><div><dl><dt>Status</dt><dd>Live</dd></dl></div></div>
   <div class="glance" aria-label="At a glance">
   <div><span class="label">Problem</span><p>HR re-entered every new hire and re-uploaded their documents in Bayzat HRMS by hand.</p></div>
-  <div><span class="label">What we shipped</span><p>A two-step Add as employee flow that sends details and typed documents.</p></div>
+  <div><span class="label">What we shipped</span><p>A two-step Add as an employee flow that sends details and typed documents.</p></div>
   <div><span class="label">Result</span><p>22 companies connected in two weeks. Core to the Bayzat HRMS partnership.</p></div>
 </div>
   <figure class="shot" style="margin-top:28px"><img class="shot-img" src="hrms-1.png" alt="A hired candidate's profile, with Add as an employee under the stage actions." loading="lazy"><figcaption>A hired candidate's profile, with Add as an employee under the stage actions.</figcaption></figure>
@@ -36,7 +36,7 @@
 <li>I choose which documents go to the employee record. A signed offer does; a draft offer doesn't.</li>
 <li>ID documents arrive with their number and expiry date, so compliance checks work from day one.</li>
 </ul></section><section id="what-we-shipped"><h2>What we shipped</h2><ol class="rulelist">
-<li><span><b>Contextual entry point.</b> "Add as employee" appears only when the candidate is hired and Bayzat HRMS is connected.</span></li>
+<li><span><b>Shown only when it applies.</b> "Add as an employee" appears only when the candidate is hired and Bayzat HRMS is connected.</span></li>
 <li><span><b>Step one: employee details.</b> Prefilled from the candidate profile. HR adds only what the ATS can't know: work email, employee ID and department.</span></li>
 <li><span><b>Step two: documents.</b> Files are grouped by source: CV, offers and e-signed documents, and candidate uploads.</span></li>
 <li><span><b>Nothing selected by default.</b> Sending the wrong file into an HR record costs more than one extra click.</span></li>
@@ -48,10 +48,11 @@
 <li>Targeted only Bayzat HRMS customers, with three numbered steps, a time estimate and an offer of a call.</li>
 <li>Worked with Bayzat HRMS to unblock accounts that couldn't reconnect from their side.</li>
 </ul></section><section id="impact"><h2>Impact</h2><div class="impact">
-<div><b>22 companies in two weeks</b><span>reconnected and in use, 17 of them in the first week. Next: track employees and documents synced, not just connections.</span></div>
+<div><b>22 companies in two weeks</b><span>reconnected and in use, 17 of them in the first week.</span></div>
 <div><b>Core to the partnership</b><span>This integration is what makes Whitecarrot and Bayzat HRMS work as one product. It's part of our paid plans, so it supports both new sales through Bayzat HRMS and renewals.</span></div>
 </div>
 <p><b>After launch,</b> I traced each reported issue to its root cause. Candidate-uploaded passports and visas were missing from the document list: fixed. A National ID number couldn't be filled in: a limitation on the Bayzat HRMS side, where custom document types have no number field. That finding led to support for Saudi document types.</p></section><section id="learnings"><h2>Learnings</h2><div class="lesson"><ul>
+<li>Measure use, not just setup. Next, I want to track employees and documents synced, not only connections.</li>
 <li>When a release needs customers to act, plan the migration as carefully as the feature. Next time I'd keep the old connection working during the switch.</li>
 <li>With a partner in the loop, communicate progress, not dates.</li>
 </ul></div></section></div>
