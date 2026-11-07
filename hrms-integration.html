@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ATS to HRMS integration · Mallikarjuna MS</title>
+<meta name="description" content="Hired candidates become employees in Bayzat HRMS, with their details and documents, in one flow.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap"><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="top"><div class="wrap"><nav>
+  <a class="me" href="index.html">Mallikarjuna MS</a>
+  <ul>
+    <li><a href="index.html#work" aria-current="page">Work</a></li>
+    <li><a href="index.html#prioritise">How I prioritise</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="resume.pdf">Resume</a></li>
+  </ul>
+</nav></div></header>
+<main class="wrap">
+  <p class="crumb"><a href="index.html#work">← All work</a></p>
+  <div class="case-hero">
+    <div class="tags"><span class="tag">Integration</span><span class="tag">Partner</span><span class="tag">Launch</span></div>
+    <h1>ATS to HRMS integration</h1>
+    <p class="sum">The handoff from hired candidate to employee was fully manual. I scoped a two-step flow that creates the employee in Bayzat HRMS with the right details and documents, and ran the rollout across about 60 accounts.</p>
+  </div>
+  <div class="facts"><div><dl><dt>Role</dt><dd>Product manager</dd></dl></div><div><dl><dt>Team</dt><dd>Founder, engineering, Bayzat HRMS</dd></dl></div><div><dl><dt>Timeline</dt><dd>Feb to Oct 2026</dd></dl></div><div><dl><dt>Status</dt><dd>Live</dd></dl></div></div>
+  <div class="glance" aria-label="At a glance">
+  <div><span class="label">Problem</span><p>HR re-entered every new hire and re-uploaded their documents in Bayzat HRMS by hand.</p></div>
+  <div><span class="label">What we shipped</span><p>A two-step Add as employee flow that sends details and typed documents.</p></div>
+  <div><span class="label">Result</span><p>22 companies connected in two weeks. Core to the Bayzat HRMS partnership.</p></div>
+</div>
+  <figure class="shot" style="margin-top:28px"><img class="shot-img" src="img/hrms-1.png" alt="A hired candidate's profile, with Add as an employee under the stage actions." loading="lazy"><figcaption>A hired candidate's profile, with Add as an employee under the stage actions.</figcaption></figure>
+  <div class="layout">
+    <aside class="toc" aria-label="On this page"><span class="label">On this page</span><ol><li><a href="#context">Context</a></li><li><a href="#problem">Problem</a></li><li><a href="#use-cases">Use cases</a></li><li><a href="#what-we-shipped">What we shipped</a></li><li><a href="#rollout">Rollout</a></li><li><a href="#impact">Impact</a></li><li><a href="#learnings">Learnings</a></li></ol></aside>
+    <div class="content"><section id="context"><h2>Context</h2><p>Whitecarrot is sold through a partnership with Bayzat HRMS, an HR management system. Most customers use both: Whitecarrot until someone is hired, Bayzat HRMS from their first day of employment.</p></section><section id="problem"><h2>Problem</h2><p>The integration sent only a new hire's basic details. No documents. HR teams downloaded the signed offer, passport, Emirates ID and visa from the ATS one by one, then uploaded each file again in Bayzat HRMS.</p>
+<p>It happened on every hire. It was slow, and it was where errors entered the employee record: the wrong file, a missing ID, an expiry date nobody captured.</p>
+<p class="quote">"When someone is hired, I want their employee profile ready, with only the documents that belong there."<small>How HR teams described the need</small></p></section><section id="use-cases"><h2>Use cases</h2><ul>
+<li>As an <b>HR admin</b>, I create the employee in Bayzat HRMS as soon as the candidate is hired, without retyping their details.</li>
+<li>I choose which documents go to the employee record. A signed offer does; a draft offer doesn't.</li>
+<li>ID documents arrive with their number and expiry date, so compliance checks work from day one.</li>
+</ul></section><section id="what-we-shipped"><h2>What we shipped</h2><ol class="rulelist">
+<li><span><b>Contextual entry point.</b> "Add as employee" appears only when the candidate is hired and Bayzat HRMS is connected.</span></li>
+<li><span><b>Step one: employee details.</b> Prefilled from the candidate profile. HR adds only what the ATS can't know: work email, employee ID and department.</span></li>
+<li><span><b>Step two: documents.</b> Files are grouped by source: CV, offers and e-signed documents, and candidate uploads.</span></li>
+<li><span><b>Nothing selected by default.</b> Sending the wrong file into an HR record costs more than one extra click.</span></li>
+<li><span><b>Document type required.</b> Bayzat HRMS organises documents by type, and ID types also require a number and expiry date.</span></li>
+</ol>
+<div class="shots2"><figure class="shot"><img class="shot-img" src="img/hrms-2.png" alt="Step one: employee details, prefilled from the candidate profile." loading="lazy"><figcaption>Step one: employee details, prefilled from the candidate profile.</figcaption></figure><figure class="shot"><img class="shot-img" src="img/hrms-3.png" alt="Step two: pick the documents to send, each with a type. ID documents also need a number and expiry date." loading="lazy"><figcaption>Step two: pick the documents to send, each with a type. ID documents also need a number and expiry date.</figcaption></figure></div><figure class="shot"><img class="shot-img" src="img/hrms-4.png" alt="After sending: the timeline shows the new employee record and the status of each document, with retry for any that failed." loading="lazy"><figcaption>After sending: the timeline shows the new employee record and the status of each document, with retry for any that failed.</figcaption></figure>
+<p><b>Cut from the first release:</b> pre-selecting the signed offer, suggesting document types from file names, and a review screen before sending. Each is useful, but none was needed to remove the manual work.</p></section><section id="rollout"><h2>Rollout</h2><p>The new version required every customer to reconnect their Bayzat HRMS account, so about 60 accounts had to take action before seeing any value. I ran it as a migration rather than an announcement:</p>
+<ul>
+<li>Targeted only Bayzat HRMS customers, with three numbered steps, a time estimate and an offer of a call.</li>
+<li>Worked with Bayzat HRMS to unblock accounts that couldn't reconnect from their side.</li>
+</ul></section><section id="impact"><h2>Impact</h2><div class="impact">
+<div><b>22 companies in two weeks</b><span>reconnected and in use, 17 of them in the first week. Next: track employees and documents synced, not just connections.</span></div>
+<div><b>Core to the partnership</b><span>This integration is what makes Whitecarrot and Bayzat HRMS work as one product. It's part of our paid plans, so it supports both new sales through Bayzat HRMS and renewals.</span></div>
+</div>
+<p><b>After launch,</b> I traced each reported issue to its root cause. Candidate-uploaded passports and visas were missing from the document list: fixed. A National ID number couldn't be filled in: a limitation on the Bayzat HRMS side, where custom document types have no number field. That finding led to support for Saudi document types.</p></section><section id="learnings"><h2>Learnings</h2><div class="lesson"><ul>
+<li>When a release needs customers to act, plan the migration as carefully as the feature. Next time I'd keep the old connection working during the switch.</li>
+<li>With a partner in the loop, communicate progress, not dates.</li>
+</ul></div></section></div>
+  </div>
+  <div class="next"><a href="multi-brand.html"><small>← Previous</small><b>Multi-brand hiring with brand-level access</b></a><a class="r" href="self-serve-onboarding.html"><small>Next project →</small><b>Self-serve onboarding and support</b></a></div>
+</main>
+<footer id="contact"><div class="wrap end">
+  <span class="label">Contact</span>
+  <h2 style="margin-top:10px">Hiring a product manager? Let's talk.</h2>
+  <p>I'm open to product manager roles, in Bengaluru or remote. Happy to walk you through any of this work in more detail.</p>
+  <div class="contact">
+    <span class="email" id="email">arjunsiddesha@gmail.com</span>
+    <button class="copy" id="copyBtn" type="button">Copy email</button>
+    <a class="btn solid" href="https://www.linkedin.com/in/msmallikarjuna/">LinkedIn</a>
+    <a class="btn" href="resume.pdf">Resume</a>
+  </div>
+  <p class="fine">© 2026 Mallikarjuna MS. Customer names are left out.</p>
+</div></footer>
+<script>
+(function(){var b=document.getElementById('copyBtn');if(!b)return;var el=document.getElementById('email');
+b.addEventListener('click',function(){function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy email'},1600)}
+function fb(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'}
+try{navigator.clipboard.writeText(el.textContent).then(done,fb)}catch(e){fb()}});})();
+</script>
+</body></html>

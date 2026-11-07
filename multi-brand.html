@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Multi-brand hiring with brand-level access · Mallikarjuna MS</title>
+<meta name="description" content="Groups run hiring for all their brands from one account: each brand with its own careers page, and access controlled by brand.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap"><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="top"><div class="wrap"><nav>
+  <a class="me" href="index.html">Mallikarjuna MS</a>
+  <ul>
+    <li><a href="index.html#work" aria-current="page">Work</a></li>
+    <li><a href="index.html#prioritise">How I prioritise</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="resume.pdf">Resume</a></li>
+  </ul>
+</nav></div></header>
+<main class="wrap">
+  <p class="crumb"><a href="index.html#work">← All work</a></p>
+  <div class="case-hero">
+    <div class="tags"><span class="tag">Platform</span><span class="tag">Permissions</span><span class="tag">Enterprise</span></div>
+    <h1>Multi-brand hiring with brand-level access</h1>
+    <p class="sum">Groups with several brands, or one company hiring across several countries, needed one ATS for all of them, with each brand looking like itself to candidates and each team seeing only its own hiring. I scoped brand creation and brand-level access, and used it to take a ten-country healthcare customer live on time.</p>
+  </div>
+  <div class="facts"><div><dl><dt>Role</dt><dd>Product manager</dd></dl></div><div><dl><dt>Team</dt><dd>Founder, engineering</dd></dl></div><div><dl><dt>Timeline</dt><dd>Oct to Nov 2026</dd></dl></div><div><dl><dt>Status</dt><dd>Live</dd></dl></div></div>
+  <div class="glance" aria-label="At a glance">
+  <div><span class="label">Problem</span><p>Groups had to choose between a separate account per brand or one account with no separation between teams.</p></div>
+  <div><span class="label">What we shipped</span><p>Brands with their own careers pages, and access set by brand, job or both.</p></div>
+  <div><span class="label">Result</span><p>A ten-country customer live on time, and one account per group on the top plan.</p></div>
+</div>
+  <figure class="shot" style="margin-top:28px"><img class="shot-img" src="img/brand-1.png" alt="Brand settings: each brand has its own name, business unit, logo, colour, email signature and careers page." loading="lazy"><figcaption>Brand settings: each brand has its own name, business unit, logo, colour, email signature and careers page.</figcaption></figure>
+  <div class="layout">
+    <aside class="toc" aria-label="On this page"><span class="label">On this page</span><ol><li><a href="#context">Context</a></li><li><a href="#problem">Problem</a></li><li><a href="#use-cases">Use cases</a></li><li><a href="#options-and-decision">Options and decision</a></li><li><a href="#how-it-works">How it works</a></li><li><a href="#decisions-and-trade-offs">Decisions and trade-offs</a></li><li><a href="#rollout">Rollout</a></li><li><a href="#impact">Impact</a></li><li><a href="#learnings">Learnings</a></li></ol></aside>
+    <div class="content"><section id="context"><h2>Context</h2><p>Many of our customers are groups: a holding company with retail, hospitality and F&amp;B brands, or one company hiring in ten countries. Candidates know the brand, not the group. They expect the brand's careers page, the brand's name in every email, and the brand's LinkedIn page.</p>
+<p>At the same time, hiring inside a group is run by separate teams. A recruiter for one brand shouldn't see another brand's candidates, and group HR needs to see all of it in one place.</p></section><section id="problem"><h2>Problem</h2><p>Groups were forced into a poor trade-off:</p>
+<ul><li><b>A separate account per brand.</b> Each brand got its own look, but the talent pool was split, there was no group-wide reporting, and the customer managed several contracts and several setups.</li>
+<li><b>One shared account.</b> Every job looked like the parent company, and every recruiter could see every brand's jobs and candidates. That's a privacy and compliance risk when candidate data crosses countries.</li></ul>
+<p>Access was also hard to maintain. A member could have all jobs, or a hand-picked list of jobs. For a brand opening new roles every week, an admin had to add each new job to each recruiter. Miss one, and the recruiter couldn't see it. Add the wrong one, and they saw another brand's candidates.</p>
+<p>A new healthcare customer moving from BambooHR made it urgent. They hire in ten countries, each country team could only see its own jobs and candidates, and access had to be in place before go-live.</p></section><section id="use-cases"><h2>Use cases</h2><ul>
+<li>As a <b>group HR lead</b>, I run hiring for every brand from one account, with one talent pool and reports I can filter by brand.</li>
+<li>As a <b>brand recruiter</b>, I see only my brand's jobs and candidates, including new jobs, without asking an admin to add each one.</li>
+<li>As a <b>recruiter covering two brands</b>, I get both, plus one group-level role I'm helping with, and nothing else.</li>
+<li>As a <b>hiring manager</b>, I see only the interview stages of my brand's jobs, with only the actions I need.</li>
+<li>As a <b>candidate</b>, I apply on the brand's careers page and every email comes from that brand.</li>
+</ul></section><section id="options-and-decision"><h2>Options and decision</h2><div class="options">
+<div class="opt"><span class="v">Option</span><p><b>Separate account per brand</b>Fastest to set up, but it splits the talent pool and removes group reporting. It solves the launch and creates long-term problems.</p></div>
+<div class="opt"><span class="v">Option</span><p><b>A new country-based permission model</b>The right long-term design, but it depended on a roles rebuild that wouldn't be ready before go-live.</p></div>
+<div class="opt pick"><span class="v">Chosen</span><p><b>Brands as the unit of access</b>Model each country or business as a brand and scope access by brand on the existing system. It met the deadline, works for every multi-brand customer, and doesn't block the roles rebuild.</p></div>
+</div></section><section id="how-it-works"><h2>How it works</h2><h3 class="sub">1. Create the brands</h3>
+<ol class="rulelist">
+<li><span><b>A default brand</b> is created from the company name. Admins add more in <b>Settings → Brands &amp; candidate portal</b>.</span></li>
+<li><span><b>Each brand has its own identity:</b> name, business unit, colour, logos, email signature and a careers page address. The careers page is created automatically.</span></li>
+<li><span><b>Every job and requisition belongs to a brand.</b> The default brand is preselected. A brand with jobs can't be deleted.</span></li>
+<li><span><b>Candidates see the brand everywhere:</b> careers page, candidate portal and emails. The source is recorded as that brand's careers page.</span></li>
+<li><span><b>LinkedIn:</b> one page for all brands, or a separate page for each.</span></li>
+<li><span><b>Filter by brand</b> across jobs, candidates, interviews, referrals and reports.</span></li>
+</ol>
+<figure class="shot"><img class="shot-img" src="img/brand-6.png" alt="Adding a brand: a name and a careers page address are all it needs. Business unit, colour, logos and email signature can be added now or later." loading="lazy"><figcaption>Adding a brand: a name and a careers page address are all it needs. Business unit, colour, logos and email signature can be added now or later.</figcaption></figure><div class="shots2"><figure class="shot"><img class="shot-img" src="img/brand-2.png" alt="Every job belongs to a brand. The careers page preview switches to that brand's logo and colour." loading="lazy"><figcaption>Every job belongs to a brand. The careers page preview switches to that brand's logo and colour.</figcaption></figure><figure class="shot"><img class="shot-img" src="img/brand-3.png" alt="LinkedIn: one page for all brands, or a separate page for each brand." loading="lazy"><figcaption>LinkedIn: one page for all brands, or a separate page for each brand.</figcaption></figure></div>
+<h3 class="sub">2. Control who sees what</h3>
+<p>Access is set per team member, in <b>Settings → Team members</b>, in layers:</p>
+<ol class="rulelist">
+<li><span><b>Role type</b> sets the baseline: Super admin, Recruiter, Hiring manager/Interviewer or Employee.</span></li>
+<li><span><b>Company permissions</b> cover account-wide actions: reports, data export, creating jobs and requisitions.</span></li>
+<li><span><b>Job access</b> is either <b>All jobs</b> or <b>Selected jobs</b>.</span></li>
+<li><span><b>Jobs by brand.</b> With selected jobs, the admin adds a brand group and picks one or more brands. The member gets every current and future job in those brands, including talent pools, drafts and closed jobs.</span></li>
+<li><span><b>Stages and permissions per brand group:</b> all stages or selected stage types, and actions such as editing jobs, sending offers, viewing confidential information or deleting candidates.</span></li>
+<li><span><b>Individual jobs</b> can be added on top. If a job is also covered by a brand group, the individual setting is what applies on that job.</span></li>
+</ol>
+<div class="shots2"><figure class="shot"><img class="shot-img" src="img/brand-4.png" alt="Adding a team member: role, company permissions, then all jobs or selected jobs." loading="lazy"><figcaption>Adding a team member: role, company permissions, then all jobs or selected jobs.</figcaption></figure><figure class="shot"><img class="shot-img" src="img/brand-5.png" alt="Selected jobs: a brand group covers every current and future job in those brands, with its own stages and permissions. Individual jobs can be added on top." loading="lazy"><figcaption>Selected jobs: a brand group covers every current and future job in those brands, with its own stages and permissions. Individual jobs can be added on top.</figcaption></figure></div></section><section id="decisions-and-trade-offs"><h2>Decisions and trade-offs</h2><ul>
+<li><b>Access follows the brand, not a list of jobs.</b> New jobs are covered the moment they're created, so admins set access once instead of every week.</li>
+<li><b>Brand groups, not one setting per brand.</b> A recruiter covering two brands needs one rule, and different groups can carry different permissions.</li>
+<li><b>Individual jobs win.</b> Exceptions are common, such as a group-level role a brand recruiter helps with. Making the specific setting win keeps them simple without creating a new brand.</li>
+<li><b>Show the scope before saving.</b> Each brand group shows how many jobs it covers today, so admins see what they're granting.</li>
+<li><b>Stage types for hiring managers.</b> A hiring manager can be limited to interview stages instead of seeing every applicant.</li>
+<li><b>A narrow exception.</b> A user who creates a job in another brand gets access to that job only. Cross-brand hiring still works without opening up the whole brand.</li>
+</ul></section><section id="rollout"><h2>Rollout</h2><ul>
+<li><b>Train the trainer.</b> We train the customer's project lead, who rolls it out to two countries first and then to the remaining eight using a guide.</li>
+<li><b>Mapping up front.</b> I collected recruiters and hiring managers by country in week one. Setup needed it anyway, and it gave engineering room to finish before go-live.</li>
+</ul></section><section id="impact"><h2>Impact</h2><div class="impact">
+<div><b>Enterprise customer live on time</b><span>Brand-level access shipped on 4 November, ahead of a ten-country healthcare group's go-live.</span></div>
+<div><b>Larger contracts</b><span>Multi-brand hiring is on our top plan. With access control, we can sell one account to a whole group instead of one small account per brand.</span></div>
+</div>
+<p><b>Success metrics:</b> share of top-plan accounts with more than one brand, members set up with brand access instead of job-by-job lists, and access-related support tickets.</p></section><section id="learnings"><h2>Learnings</h2><div class="lesson"><ul>
+<li>Enterprise buyers judge control as much as features: who can see what, and who can change it.</li>
+<li>Shipping the scoped version first, with the full roles model still on the roadmap, met the deadline without creating throwaway work.</li>
+</ul></div></section></div>
+  </div>
+  <div class="next"><a href="index.html#work"><small>← Back</small><b>All work</b></a><a class="r" href="hrms-integration.html"><small>Next project →</small><b>ATS to HRMS integration</b></a></div>
+</main>
+<footer id="contact"><div class="wrap end">
+  <span class="label">Contact</span>
+  <h2 style="margin-top:10px">Hiring a product manager? Let's talk.</h2>
+  <p>I'm open to product manager roles, in Bengaluru or remote. Happy to walk you through any of this work in more detail.</p>
+  <div class="contact">
+    <span class="email" id="email">arjunsiddesha@gmail.com</span>
+    <button class="copy" id="copyBtn" type="button">Copy email</button>
+    <a class="btn solid" href="https://www.linkedin.com/in/msmallikarjuna/">LinkedIn</a>
+    <a class="btn" href="resume.pdf">Resume</a>
+  </div>
+  <p class="fine">© 2026 Mallikarjuna MS. Customer names are left out.</p>
+</div></footer>
+<script>
+(function(){var b=document.getElementById('copyBtn');if(!b)return;var el=document.getElementById('email');
+b.addEventListener('click',function(){function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy email'},1600)}
+function fb(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'}
+try{navigator.clipboard.writeText(el.textContent).then(done,fb)}catch(e){fb()}});})();
+</script>
+</body></html>
